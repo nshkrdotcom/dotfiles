@@ -3,3 +3,7 @@
     email = vibecd@NSHkr.com
 [core]
     sshCommand = ssh -i ~/.ssh/id_rsa_vibecd
+[url "v:vibescd/"]
+    insteadOf = https://github.com/vibescd/
+[url "v:vibescd/"]
+    insteadOf = git@github.com:vibescd/

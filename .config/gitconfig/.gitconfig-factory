@@ -3,3 +3,7 @@
     email = factory-dot-ai@NSHkr.com
 [core]
     sshCommand = ssh -i ~/.ssh/id_rsa_nshkr-factory-dot-ai
+[url "f:nshkr-factory-dot-ai/"]
+    insteadOf = https://github.com/nshkr-factory-dot-ai/
+[url "f:nshkr-factory-dot-ai/"]
+    insteadOf = git@github.com:nshkr-factory-dot-ai/

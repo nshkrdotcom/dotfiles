@@ -1,0 +1,19 @@
+# GitHub CLI hosts configuration template
+# Copy this to hosts.yml and add your actual OAuth tokens
+# 
+# To get OAuth tokens for each account:
+# gh auth login --hostname github.com --account <username>
+
+github.com:
+    users:
+        nshkrdotcom:
+            oauth_token: YOUR_NSHKRDOTCOM_TOKEN_HERE
+        vibescd:
+            oauth_token: YOUR_VIBESCD_TOKEN_HERE
+        gtcode-dot-com:
+            oauth_token: YOUR_GTCODE_TOKEN_HERE
+        nshkr-factory-dot-ai:
+            oauth_token: YOUR_FACTORY_TOKEN_HERE
+    git_protocol: ssh
+    user: nshkrdotcom  # Default active user
+    oauth_token: YOUR_NSHKRDOTCOM_TOKEN_HERE  # Default user's token 

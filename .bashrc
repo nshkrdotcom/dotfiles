@@ -98,18 +98,18 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.bash/bash_aliases ]; then
+    . ~/.bash/bash_aliases
 fi
 
 # Source environment variables
-if [ -f ~/.bash_env ]; then
-    . ~/.bash_env
+if [ -f ~/.bash/bash_env ]; then
+    . ~/.bash/bash_env
 fi
 
 # Source sensitive environment variables (with restricted permissions)
-if [ -f ~/.bash_secrets ]; then
-    . ~/.bash_secrets
+if [ -f ~/.bash/bash_secrets ]; then
+    . ~/.bash/bash_secrets
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -127,14 +127,17 @@ fi
 # =============================================================================
 # CUSTOM CONFIGURATION FILES
 # =============================================================================
-# Configuration has been organized into separate files:
+# Configuration has been organized into the ~/.bash/ directory:
 # 
-# ~/.bash_aliases    - All custom aliases and functions
-# ~/.bash_env        - Non-sensitive environment variables
-# ~/.bash_secrets    - Sensitive environment variables (API keys, passwords)
+# ~/.bash/bash_aliases       - All custom aliases and functions
+# ~/.bash/bash_env           - Non-sensitive environment variables
+# ~/.bash/bash_secrets       - Sensitive environment variables (API keys, passwords)
+# ~/.bash/bash_secrets.template - Template for setting up secrets
+# ~/.bash/bash_logout        - Bash logout script
+# ~/.bash/profile            - Shell profile
 # 
 # Security Notes:
-# - ~/.bash_secrets has 600 permissions (owner read/write only)
+# - ~/.bash/bash_secrets has 600 permissions (owner read/write only)
 # - Sensitive files are listed in ~/.gitignore
 # - Never commit secrets to version control
 # =============================================================================

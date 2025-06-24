@@ -3,3 +3,7 @@
     email = ZeroTrust@NSHkr.com
 [core]
     sshCommand = ssh -i ~/.ssh/id_rsa
+[url "n:nshkrdotcom/"]
+    insteadOf = https://github.com/nshkrdotcom/
+[url "n:nshkrdotcom/"]
+    insteadOf = git@github.com:nshkrdotcom/

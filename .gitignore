@@ -13,10 +13,13 @@
 
 # Bash configuration (non-sensitive)
 !.bashrc
-!.bash_aliases
-!.bash_env
-!.bash_logout
-!.profile
+!.bash/
+.bash/*
+!.bash/bash_aliases
+!.bash/bash_env
+!.bash/bash_logout
+!.bash/profile
+!.bash/bash_secrets.template
 
 # Git configuration
 !.gitconfig
@@ -44,6 +47,8 @@
 # GitHub CLI configuration
 !.config/gh/
 !.config/gh/config.yml
+!.config/gh/hosts.yml.template
+# Note: hosts.yml contains OAuth tokens - kept private
 
 # Development tool configurations
 !.config/create-next-app-nodejs/
@@ -77,8 +82,12 @@
 
 # Sensitive configuration files
 .bash_secrets
+.bash/bash_secrets
 .env*
 *.env
+
+# GitHub CLI OAuth tokens
+.config/gh/hosts.yml
 
 # SSH keys and certificates (but allow config)
 # .ssh/ - Selectively allowed above for config file only
