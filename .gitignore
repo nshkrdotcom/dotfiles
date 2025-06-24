@@ -1,0 +1,108 @@
+# =============================================================================
+# WHITELIST APPROACH: Ignore everything, then explicitly allow safe files
+# =============================================================================
+# This provides maximum security by default - everything is ignored unless
+# explicitly whitelisted below.
+
+# Ignore everything by default
+*
+
+# =============================================================================
+# WHITELISTED FILES - Safe to commit
+# =============================================================================
+
+# Bash configuration (non-sensitive)
+!.bashrc
+!.bash_aliases
+!.bash_env
+!.bash_logout
+!.profile
+
+# Git configuration
+!.gitconfig
+!.gitignore
+
+# Development tool configurations
+# !.tool-versions
+# !.asdf/
+# !.asdf/**
+
+# Cursor/IDE configurations (specific files only)
+!.cursor/
+.cursor/*
+!.cursor/mcp.json
+
+# Documentation and notes
+!docs/
+!docs/**
+!README*
+!*.md
+
+# Scripts (review before committing)
+!scripts/
+!scripts/**
+!.scripts/
+!.scripts/**
+
+# Project directories (if you want to track them)
+!p/
+# Note: Add specific project whitelist patterns as needed
+# Example: !p/g/myproject/**
+
+# =============================================================================
+# EXPLICITLY BLACKLISTED - Never commit these even if whitelisted above
+# =============================================================================
+
+# Sensitive configuration files
+.bash_secrets
+.env*
+*.env
+
+# SSH keys and certificates  
+.ssh/
+*.pem
+*.key
+*.crt
+*_rsa
+*_rsa.pub
+*_ed25519
+*_ed25519.pub
+
+# API keys and credential files
+.keys/
+*_credentials.json
+*_service_account.json
+*_key.json
+*.p12
+*.pfx
+
+# Logs that might contain sensitive information
+.sslkey.log
+*.log
+.bash_history
+.python_history
+.node_repl_history
+.psql_history
+.lesshst
+
+# Cache and temporary files
+.cache/
+.tmp/
+.temp/
+*.tmp
+*.temp
+
+# Personal/private directories
+.personal_config
+.private/
+.secret/
+
+# Browser and application data
+.mozilla/
+.chrome/
+.vscode/
+# .cursor/ - Selectively allowed above
+
+# System files
+.sudo_as_admin_successful
+.motd_shown 

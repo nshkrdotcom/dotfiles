@@ -1,0 +1,60 @@
+#!/bin/bash
+# ~/.bash_env: Non-sensitive environment variables
+# This file is sourced by ~/.bashrc
+
+# =============================================================================
+# DEVELOPMENT TOOLS CONFIGURATION
+# =============================================================================
+
+# Python Environment (pyenv)
+export PYENV_ROOT="$HOME/.pyenv"
+
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+
+# =============================================================================
+# PATH EXTENSIONS
+# =============================================================================
+
+# UV (Python package installer)
+if [[ ":$PATH:" != *":/home/home/.local/bin:"* ]]; then
+    export PATH="/home/home/.local/bin:$PATH"
+fi
+
+# OpenCode
+if [[ ":$PATH:" != *":/home/home/.opencode/bin:"* ]]; then
+    export PATH="/home/home/.opencode/bin:$PATH"
+fi
+
+# =============================================================================
+# DATABASE CONFIGURATION (NON-PRODUCTION)
+# =============================================================================
+
+# PostgreSQL Local Development
+export PGUSER="postgres"
+export PGPASSWORD="postgres"
+export PGHOST="localhost"
+export PGDATABASE="context_nexus_dev"
+export PGPORT="5432"
+
+# =============================================================================
+# AI/LLM CONFIGURATION
+# =============================================================================
+
+# Default AI Models and Providers
+export VERTEX_DEFAULT_MODEL="gemini-2.0-flash"
+export LLM_PROVIDER="vertex"
+export GEMINI_DEFAULT_MODEL="gemini-2.0-flash"
+
+# Vertex AI Configuration File Path
+export VERTEX_JSON_FILE="/home/home/.keys/gcp-vertex-johnsmith.json"
+
+# =============================================================================
+# APPLICATION CONFIGURATION
+# =============================================================================
+
+# Local Development Flags
+export LOCAL_JIDO_DEPS="true"
+
+# SSL Key Logging (Development)
+export SSLKEYLOGFILE="/home/home/.sslkey.log" 

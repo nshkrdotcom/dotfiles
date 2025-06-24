@@ -1,0 +1,134 @@
+#!/bin/bash
+# ~/.bash_aliases: Custom aliases and functions
+# This file is sourced by ~/.bashrc
+
+# =============================================================================
+# DIRECTORY NAVIGATION ALIASES
+# =============================================================================
+alias n='cd ~/p/g/n'
+alias es='cd ~/p/g/n/elixir_scope'
+
+# =============================================================================
+# FILE LISTING ALIASES
+# =============================================================================
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# =============================================================================
+# GIT ALIASES
+# =============================================================================
+alias gs='git status'
+alias gaa='git add .'
+
+# =============================================================================
+# CLIPBOARD ALIASES
+# =============================================================================
+alias copy='xclip -selection clipboard'
+alias clip='xclip'  # copy to X clipboard (register *)
+alias cs='xclip -selection clipboard'  # copy to system wide clipboard (register +)
+alias v='xclip -o'  # output copied content (paste)
+alias vs='xclip -o -selection clipboard'  # paste from system wide clipboard
+
+# =============================================================================
+# APPLICATION ALIASES
+# =============================================================================
+alias e='explorer.exe .'
+alias llm='~/scripts/llm.py'
+alias codec="/mnt/c/Users/windo/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+alias re='repomix --compress'
+alias ree='repomix --compress && codec repomix-output.xml'
+
+# =============================================================================
+# PYTHON ALIASES
+# =============================================================================
+alias python='python3'
+alias pip='pip3'
+
+# =============================================================================
+# CUSTOM SCRIPT ALIASES
+# =============================================================================
+alias findex='~/.scripts/find_large_ex_files.sh'
+
+# =============================================================================
+# GIT CLONE FUNCTIONS
+# =============================================================================
+cn() {
+  if [ -z "$1" ]; then
+    echo "Usage: cn <repository_name>"
+    return 1
+  fi
+  echo "Cloning n:$1..."
+  git clone "n:$1"
+}
+
+cv() {
+  if [ -z "$1" ]; then
+    echo "Usage: cv <repository_name>"
+    return 1
+  fi
+  echo "Cloning v:$1..."
+  git clone "v:$1"
+}
+
+cg() {
+  if [ -z "$1" ]; then
+    echo "Usage: cg <repository_name>"
+    return 1
+  fi
+  echo "Cloning g:$1..."
+  git clone "g:$1"
+}
+
+# =============================================================================
+# GIT UTILITY FUNCTIONS
+# =============================================================================
+fb() {
+  git add .
+  git commit -m 'fb'
+  git push
+}
+
+# =============================================================================
+# CODE EDITOR FUNCTIONS
+# =============================================================================
+c() {
+  if [ -z "$1" ]; then
+    echo "Usage: c path/to/open"
+    return 1
+  fi
+  code "$1"
+}
+
+# =============================================================================
+# ELIXIR DEVELOPMENT FUNCTIONS
+# =============================================================================
+ex() {
+  find . -type f \( -name "*.ex" -o -name "*.exs" \) -exec grep -E --color=auto '^\s*(defmodule|def|defp|describe|test)' {} +
+}
+
+mixsw() {
+  mix "$@" 2>&1 | awk '/^[[:space:]]*warning: /{c=8} c&&c--{next} 1'
+}
+
+# =============================================================================
+# ENVIRONMENT VARIABLE MANAGEMENT FUNCTIONS
+# =============================================================================
+unset_gemini() {
+  echo "Attempting to unset..."
+  unset GEMINI_API_KEY
+  unset VERTEX_JSON_FILE
+  echo "gemini and vertex have been unset (if they existed)."
+}
+
+# Function to unset a single environment variable
+# Usage: unset_env_var <VARIABLE_NAME>
+unset_env_var() {
+  local var_name="$1"
+  if [ -z "$var_name" ]; then
+    echo "Error: Please provide a variable name to unset."
+    return 1
+  fi
+  unset "$var_name"
+  echo "Environment variable '$var_name' has been unset."
+} 

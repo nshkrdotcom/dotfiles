@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    },
+    "tidewave": {
+      "command": "/home/home/.pyenv/shims/mcp-proxy",
+      "args": [
+        "http://localhost:4040/tidewave/mcp"
+      ]
+    }
+
+  }
+}
