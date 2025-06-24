@@ -1,3 +1,13 @@
 [user]
+    # Fallback user (optional, can be omitted if all repos are covered)
 	email = ZeroTrust@NSHkr.com
 	name = NSHkr
+
+[includeIf "gitdir:~/repos/nshkrdotcom/"]
+    path = ~/.config/gitconfig/.gitconfig-nshkrdotcom
+[includeIf "gitdir:~/repos/vibecd/"]
+    path = ~/.config/gitconfig/.gitconfig-vibecd
+[includeIf "gitdir:~/repos/gtcode/"]
+    path = ~/.config/gitconfig/.gitconfig-gtcode
+[includeIf "gitdir:~/repos/factory/"]
+    path = ~/.config/gitconfig/.gitconfig-factory

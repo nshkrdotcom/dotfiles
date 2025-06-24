@@ -1,0 +1,5 @@
+[user]
+    name = nshkr-factory-dot-ai
+    email = factory-dot-ai@NSHkr.com
+[core]
+    sshCommand = ssh -i ~/.ssh/id_rsa_nshkr-factory-dot-ai

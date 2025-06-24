@@ -1,0 +1,5 @@
+[user]
+    name = gtcode-dot-com
+    email = info@GTCode.com
+[core]
+    sshCommand = ssh -i ~/.ssh/id_rsa_gtcode-dot-com
