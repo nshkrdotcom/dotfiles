@@ -135,4 +135,12 @@ unset_env_var() {
   fi
   unset "$var_name"
   echo "Environment variable '$var_name' has been unset."
-} 
+}
+
+# =============================================================================
+# GITHUB CLI ACCOUNT SWITCHER
+# =============================================================================
+# Load GitHub CLI manual switcher functions
+if [ -f ~/.config/gh/bash_gh_switcher ]; then
+    . ~/.config/gh/bash_gh_switcher
+fi 

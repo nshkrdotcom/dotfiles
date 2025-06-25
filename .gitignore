@@ -47,6 +47,7 @@
 # GitHub CLI configuration
 !.config/gh/
 !.config/gh/config.yml
+!.config/gh/bash_gh_switcher
 !.config/gh/hosts.yml.template
 # Note: hosts.yml contains OAuth tokens - kept private
 

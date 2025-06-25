@@ -1,0 +1,71 @@
+#!/bin/bash
+# GitHub CLI Manual Account Switcher
+# Provides functions to manually switch gh accounts based on current directory
+
+# Function to detect and switch GitHub account based on current directory
+gh_switch() {
+    local current_dir=$(pwd)
+    local target_account=""
+    
+    # Define directory to account mappings based on your gitconfig
+    if [[ "$current_dir" == *"/p/g/v"* ]]; then
+        target_account="vibescd"
+    elif [[ "$current_dir" == *"/p/g/n"* ]]; then
+        target_account="nshkrdotcom"
+    elif [[ "$current_dir" == *"/p/g/g"* ]]; then
+        target_account="gtcode-dot-com"
+    elif [[ "$current_dir" == *"/p/g/f"* ]]; then
+        target_account="nshkr-factory-dot-ai"
+    else
+        # Default account for other directories
+        target_account="nshkrdotcom"
+    fi
+    
+    # Get current active account
+    local current_account=$(gh auth status 2>&1 | grep -B1 "Active account: true" | grep "Logged in to github.com account" | awk '{print $7}')
+    
+    # Switch account if needed
+    if [[ "$current_account" != "$target_account" ]]; then
+        echo "🔄 Switching GitHub CLI account from '$current_account' to '$target_account'"
+        gh auth switch --hostname github.com --user "$target_account"
+        echo "✅ Now using account: $target_account"
+    else
+        echo "✅ Already using correct account: $target_account"
+    fi
+}
+
+# Show current account and directory mapping
+gh_status() {
+    echo "📁 Current directory: $(pwd)"
+    echo "🔍 GitHub CLI status:"
+    gh auth status
+}
+
+# Function to show which account should be used for current directory
+gh_which() {
+    local current_dir=$(pwd)
+    local target_account=""
+    
+    if [[ "$current_dir" == *"/p/g/v"* ]]; then
+        target_account="vibescd"
+    elif [[ "$current_dir" == *"/p/g/n"* ]]; then
+        target_account="nshkrdotcom"
+    elif [[ "$current_dir" == *"/p/g/g"* ]]; then
+        target_account="gtcode-dot-com"
+    elif [[ "$current_dir" == *"/p/g/f"* ]]; then
+        target_account="nshkr-factory-dot-ai"
+    else
+        target_account="nshkrdotcom"
+    fi
+    
+    echo "📁 Directory: $(pwd)"
+    echo "👤 Should use account: $target_account"
+    
+    local current_account=$(gh auth status 2>&1 | grep -B1 "Active account: true" | grep "Logged in to github.com account" | awk '{print $7}')
+    if [[ "$current_account" == "$target_account" ]]; then
+        echo "✅ Current account is correct"
+    else
+        echo "❌ Current account ($current_account) doesn't match expected ($target_account)"
+        echo "💡 Run 'gh_switch' to fix this"
+    fi
+} 
