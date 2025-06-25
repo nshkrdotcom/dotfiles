@@ -143,4 +143,36 @@ unset_env_var() {
 # Load GitHub CLI manual switcher functions
 if [ -f ~/.config/gh/bash_gh_switcher ]; then
     . ~/.config/gh/bash_gh_switcher
-fi 
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################################### YEAH YOU!
+
+
+
+
+
+
+
+
+# ==============================
+# Gemini's Claude Install-as-run
+# ==============================
+alias gemini='npx https://github.com/google-gemini/gemini-cli'
