@@ -3,11 +3,11 @@
 	email = ZeroTrust@NSHkr.com
 	name = NSHkr
 
-[includeIf "gitdir:~/p/g/n/"]
+[includeIf "gitdir:**/p/g/n/**"]
     path = ~/.config/gitconfig/.gitconfig-nshkrdotcom
-[includeIf "gitdir:~/p/g/v/"]
+[includeIf "gitdir:**/p/g/v/**"]
     path = ~/.config/gitconfig/.gitconfig-vibecd
-[includeIf "gitdir:~/p/g/g/"]
+[includeIf "gitdir:**/p/g/g/**"]
     path = ~/.config/gitconfig/.gitconfig-gtcode
-[includeIf "gitdir:~/p/g/f/"]
+[includeIf "gitdir:**/p/g/f/**"]
     path = ~/.config/gitconfig/.gitconfig-factory
