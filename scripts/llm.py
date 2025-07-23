@@ -21,7 +21,9 @@ import argparse
 # The new API might expect different model name formats or aliases,
 # so these might need adjustment based on available models with the new SDK.
 DEFAULT_MODEL = "gemini-2.5-flash-lite-preview-06-17"
-PRO_MODEL = "models/gemini-2.5-flash"
+#DEFAULT_MODEL = "models/gemini-2.5-pro"
+FLASH_MODEL = "models/gemini-2.5-flash-lite-preview-06-17"
+PRO_MODEL = "models/gemini-2.5-pro"
 
 def main():
     parser = argparse.ArgumentParser(

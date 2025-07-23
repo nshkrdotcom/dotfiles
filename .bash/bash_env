@@ -42,9 +42,9 @@ export PGPORT="5432"
 # =============================================================================
 
 # Default AI Models and Providers
-export VERTEX_DEFAULT_MODEL="gemini-2.0-flash"
+export VERTEX_DEFAULT_MODEL="gemini-2.0-flash-lite"
 export LLM_PROVIDER="vertex"
-export GEMINI_DEFAULT_MODEL="gemini-2.0-flash"
+export GEMINI_DEFAULT_MODEL="gemini-2.0-flash-lite"
 
 # Vertex AI Configuration File Path
 export VERTEX_JSON_FILE="/home/home/.keys/gcp-vertex-johnsmith.json"
@@ -58,3 +58,6 @@ export LOCAL_JIDO_DEPS="true"
 
 # SSL Key Logging (Development)
 export SSLKEYLOGFILE="/home/home/.sslkey.log" 
+
+
+#export CLAUDE_CODE_MAX_OUTPUT_TOKENS=48000

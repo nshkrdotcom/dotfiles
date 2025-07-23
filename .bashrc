@@ -164,3 +164,7 @@ eval "$(pyenv virtualenv-init -)"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 . "$HOME/.cargo/env"
+umask 002
+# export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk "{print \$2}"):0
+export PATH="$HOME/.deno/bin:$PATH"
+export PATH="$HOME/.mix/escripts:$PATH"
