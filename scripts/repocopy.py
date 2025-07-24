@@ -7,8 +7,11 @@ import tempfile
 
 # Define the options
 OPTIONS = [
-    ["lib", "test"],
-    ["lib", "priv/python", "priv/proto", "examples"]
+    ["lib", "priv/python", "priv/proto", "examples"],  # Option 1 (was option 2)
+    ["lib", "priv/python"],                           # Option 2
+    ["lib", "priv/python", "priv/proto"],             # Option 3
+    ["examples"],                                      # Option 4
+    ["lib", "test"]                                    # Option 5 (was option 1)
 ]
 
 def run_repomix_for_dirs(dirs):
@@ -46,7 +49,10 @@ def run_repomix_for_dirs(dirs):
                 print(f"  Found output file: {repomix_file}")
                 with open(repomix_file, 'r', encoding='utf-8') as f:
                     content = f.read()
-                combined_content += f"\n\n# === ./{dir_name}/ ===\n\n{content}"
+                if combined_content:
+                    combined_content += f"\n\n# === ./{dir_name}/ ===\n\n{content}"
+                else:
+                    combined_content = f"# === ./{dir_name}/ ===\n\n{content}"
                 
                 # Remove the file
                 os.remove(repomix_file)
