@@ -11,7 +11,8 @@ OPTIONS = [
     ["lib", "priv/python"],                           # Option 2
     ["lib", "priv/python", "priv/proto"],             # Option 3
     ["examples"],                                      # Option 4
-    ["lib", "test"]                                    # Option 5 (was option 1)
+    ["lib", "test"],                                   # Option 5 (was option 1)
+    ["lib", "test", "examples"]                        # Option 6
 ]
 
 def run_repomix_for_dirs(dirs):
@@ -144,14 +145,21 @@ def main():
         
         try:
             choice = input("\nEnter option number: ")
+            choice = choice.strip()  # Remove any whitespace
+            if not choice:
+                print("\nNo input provided")
+                sys.exit(1)
             option_num = int(choice)
             if 1 <= option_num <= len(OPTIONS):
                 selected_dirs = OPTIONS[option_num - 1]
             else:
                 print(f"Error: Option must be between 1 and {len(OPTIONS)}")
                 sys.exit(1)
-        except (ValueError, KeyboardInterrupt):
-            print("\nInvalid input or cancelled")
+        except ValueError as e:
+            print(f"\nInvalid input: '{choice}' is not a valid number")
+            sys.exit(1)
+        except KeyboardInterrupt:
+            print("\nCancelled by user")
             sys.exit(1)
     
     # Run repomix for selected directories
