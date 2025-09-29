@@ -10,6 +10,7 @@ alias es='cd ~/p/g/n/elixir_scope'
 
 alias g='cd ~/p/g/g'
 alias v='cd ~/p/g/v'
+alias r='cd ~/p/n/r'
 # alias f='cd ~/p/g/f'
 alias f='cd ~/p/g/n/elixir_ml/foundation'
 

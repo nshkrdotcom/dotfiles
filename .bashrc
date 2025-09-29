@@ -148,7 +148,7 @@ fi
 
 . $HOME/.asdf/asdf.sh
 
-. $HOME/.asdf/completions/asdf.bash
+#. $HOME/.asdf/completions/asdf.bash
 
 
 # =============================================================================
@@ -156,15 +156,15 @@ fi
 # =============================================================================
 
 # Python Environment Manager (pyenv)
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 
 # Node Version Manager (nvm)
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# . "$HOME/.cargo/env"
 umask 002
 # export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk "{print \$2}"):0
-export PATH="$HOME/.deno/bin:$PATH"
-export PATH="$HOME/.mix/escripts:$PATH"
+#export PATH="$HOME/.deno/bin:$PATH"
+#export PATH="$HOME/.mix/escripts:$PATH"

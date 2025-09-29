@@ -27,5 +27,5 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # uv
-export PATH="/home/home/.local/bin:$PATH"
-. "$HOME/.cargo/env"
+#export PATH="/home/home/.local/bin:$PATH"
+#. "$HOME/.cargo/env"
