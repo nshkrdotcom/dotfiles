@@ -43,6 +43,7 @@ alias vs='xclip -o -selection clipboard'  # paste from system wide clipboard
 alias e='explorer.exe .'
 alias llm='~/scripts/llm.py'
 alias repocopy='~/scripts/repocopy.py'
+alias code="/mnt/c/Users/windo/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
 alias codec="/mnt/c/Users/windo/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
 alias re='repomix --compress'
 alias ree='repomix --compress && codec repomix-output.xml'
@@ -171,5 +172,3 @@ alias gemini='npx https://github.com/google-gemini/gemini-cli'
 
 alias claude='claude --dangerously-skip-permissions'
 
-alias code='code-insiders'
-alias codec='code-insiders'
