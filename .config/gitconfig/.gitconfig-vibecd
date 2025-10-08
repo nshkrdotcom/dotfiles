@@ -1,9 +1,1 @@
-[user]
-    name = vibecd
-    email = vibecd@NSHkr.com
-[core]
-    sshCommand = ssh -i ~/.ssh/id_rsa_vibecd
-[url "v:vibescd/"]
-    insteadOf = https://github.com/vibescd/
-[url "v:vibescd/"]
-    insteadOf = git@github.com:vibescd/
+/home/home/p/g/n/dotfiles/.config/gitconfig/.gitconfig-vibecd

@@ -1,9 +1,1 @@
-[user]
-    name = gtcode-dot-com
-    email = info@GTCode.com
-[core]
-    sshCommand = ssh -i ~/.ssh/id_rsa_gtcode-dot-com
-[url "g:gtcode-dot-com/"]
-    insteadOf = https://github.com/gtcode-dot-com/
-[url "g:gtcode-dot-com/"]
-    insteadOf = git@github.com:gtcode-dot-com/
+/home/home/p/g/n/dotfiles/.config/gitconfig/.gitconfig-gtcode
